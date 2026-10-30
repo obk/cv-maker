@@ -1,0 +1,74 @@
+# cvmaker configuration.
+#
+# Every key is optional: delete what you do not need and the default shown
+# here applies. Lengths are in points (1 pt = 1/72 inch) unless noted.
+# Relative paths are resolved against the folder this file is in.
+
+# PDF metadata. title and author default to the name in "# Name".
+# title: Alex J. Random – CV
+# author: Alex J. Random
+# subject: Curriculum Vitae
+# keywords: [devops, kubernetes, go]
+lang: en            # "tr" also switches uppercasing to Turkish rules (i → İ)
+
+page: A4            # A4, Letter or Legal
+margins:            # millimetres
+  top: 12.5
+  bottom: 12.5
+  left: 15
+  right: 15
+
+font:
+  # "Liberation Sans" is built in (Helvetica/Arial metrics, full Turkish
+  # coverage, works offline). Any other name is a font family such as
+  # "Inter", "IBM Plex Sans", "Work Sans" or "Roboto".
+  family: Liberation Sans
+
+  # Where other families come from:
+  #   auto   - ./fonts next to the CV, then installed fonts, then Google Fonts
+  #   local  - ./fonts and installed fonts only (never touches the network)
+  #   google - always download from fonts.google.com (cached after first use)
+  source: auto
+
+  # Weights downloaded from Google Fonts (100-900). Try 300/500 with Inter
+  # for a lighter, more Swiss look.
+  weight: 400
+  bold_weight: 700
+
+  # Or point at TrueType files directly; this wins over family.
+  # files:
+  #   regular: fonts/Inter-Regular.ttf
+  #   bold: fonts/Inter-Bold.ttf
+  #   italic: fonts/Inter-Italic.ttf
+  #   bold_italic: fonts/Inter-BoldItalic.ttf
+
+  size: 10.5          # body text
+  line_height: 1.35   # multiple of size
+  name_size: 24       # "# Name"
+  section_size: 12    # "## Section"
+  meta_size: 8.5      # dates after " | " in "### Entry | Date"
+
+colors:
+  text: "#000000"
+  muted: "#333333"    # header lines and dates
+  rule: "#000000"     # line under section titles
+  link: "#000000"
+
+photo:
+  path: ""            # e.g. photo.jpg (JPEG or PNG); empty = no photo
+  size: 28            # millimetres, the photo is cropped to a square
+  shape: square       # square, rounded or circle
+  position: right     # right or left of the header
+
+spacing:              # space before each kind of block
+  header: 4           # between the name and the lines under it
+  section: 11
+  entry: 7
+  block: 2            # paragraphs and lists
+  item: 1.5           # between list items
+
+hard_wraps: true      # every source line is a line in the PDF; false = standard Markdown
+justify: true         # justified body text, as in the LaTeX template
+uppercase: true       # NAME and SECTION TITLES in capitals
+underline_links: false
+rule_width: 0.5
